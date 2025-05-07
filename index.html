@@ -1,318 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mithaas Sweets - Swaad Apne Ghar Ka</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mithaas Sweets - Swaad Apne Ghar Ka</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-primary">Mithaas</span>
-                    <span class="logo-secondary">Sweets</span>
-                </a>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="team.html">Team</a></li>
-                </ul>
-            </nav>
-            <div class="nav-icons">
-                <a href="cart.html" class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </a>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-primary">Mithaas</span>
+          <span class="logo-secondary">Sweets</span>
+        </a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="team.html">Team</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="cart.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <div class="close-btn">
-            <i class="fas fa-times"></i>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="close-btn">
+      <i class="fas fa-times"></i>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Mithaas Sweets</h1>
+        <p class="tagline">"Swaad Apne Ghar Ka"</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-image">
+            <img src="images/shop-front.jpg" alt="Mithaas Sweets Shop Front"/>
+          </div>
+          <div class="about-text">
+            <h2>Our Sweet Legacy</h2>
+            <p>Welcome to Mithaas Sweets, a family-run sweet shop with a rich heritage dating back to 1937. Currently headed by Mr. Sanjay Singhania, an MBA from FMS Delhi, we continue to serve authentic Indian sweets and snacks made with traditional recipes and the finest ingredients.</p>
+            <p>Our commitment to quality and taste has made us a beloved destination for generations of sweet lovers in Delhi and beyond.</p>
+            <div class="contact-info">
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>MAP 915, Sector 12, RK Puram, New Delhi</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <span>7042023653</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <span>Open daily: 8:00 AM - 9:00 PM</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <ul>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+      <div class="container">
+        <h2>Our Signature Sweets</h2>
+        <div class="products-grid">
+          <!-- Product Cards -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="images/kaju-katli.jpg" alt="Kaju Katli" />
+            </div>
+            <div class="product-info">
+              <h3>Kaju Katli</h3>
+              <p>Delicate diamond-shaped cashew fudge with silver varq topping</p>
+              <div class="product-footer">
+                <span class="price">₹800/kg</span>
+                <button class="btn-small" onclick="addToCart(1, 'Kaju Katli', 800, 'images/kaju-katli.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img src="images/gulab-jamun.jpg" alt="Gulab Jamun" />
+            </div>
+            <div class="product-info">
+              <h3>Gulab Jamun</h3>
+              <p>Soft milk solids dumplings soaked in rose-flavored sugar syrup</p>
+              <div class="product-footer">
+                <span class="price">₹400/kg</span>
+                <button class="btn-small" onclick="addToCart(2, 'Gulab Jamun', 400, 'images/gulab-jamun.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img src="images/rasgulla.jpg" alt="Rasgulla" />
+            </div>
+            <div class="product-info">
+              <h3>Rasgulla</h3>
+              <p>Spongy white balls made of chenna soaked in light sugar syrup</p>
+              <div class="product-footer">
+                <span class="price">₹350/kg</span>
+                <button class="btn-small" onclick="addToCart(3, 'Rasgulla', 350, 'images/rasgulla.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img src="images/soan-papdi.jpg" alt="Soan Papdi" />
+            </div>
+            <div class="product-info">
+              <h3>Soan Papdi</h3>
+              <p>Flaky and crispy sweet made with gram flour, ghee, and cardamom</p>
+              <div class="product-footer">
+                <span class="price">₹300/kg</span>
+                <button class="btn-small" onclick="addToCart(4, 'Soan Papdi', 300, 'images/soan-papdi.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img src="images/motichoor-ladoo.jpg" alt="Motichoor Ladoo" />
+            </div>
+            <div class="product-info">
+              <h3>Motichoor Ladoo</h3>
+              <p>Golden-orange sweet balls made with fine boondi and ghee</p>
+              <div class="product-footer">
+                <span class="price">₹500/kg</span>
+                <button class="btn-small" onclick="addToCart(5, 'Motichoor Ladoo', 500, 'images/motichoor-ladoo.jpg')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-img">
+                <img src="images/testimonial1.jpg" alt="Priya Sharma" />
+              </div>
+              <div class="testimonial-author">
+                <h3>Priya Sharma</h3>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="testimonial-text">The sweets from Mithaas are absolutely divine! Their Kaju Katli is the best I've ever had.</p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-img">
+                <img src="images/testimonial2.jpg" alt="Rajesh Kumar" />
+              </div>
+              <div class="testimonial-author">
+                <h3>Rajesh Kumar</h3>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="testimonial-text">Been a customer for over 20 years. The quality and taste have remained consistent throughout.</p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-img">
+                <img src="images/testimonial3.jpg" alt="Anita Patel" />
+              </div>
+              <div class="testimonial-author">
+                <h3>Anita Patel</h3>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="testimonial-text">Their Gulab Jamun is to die for! Perfect sweetness and so soft. A must-try!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Festival Banner -->
+    <section class="festival-banner">
+      <div class="container">
+        <div class="banner-content">
+          <p>Celebrate this festive season with our special gift boxes and sweet assortments.</p>
+          <a href="products.html" class="btn-banner">Shop Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mithaas Sweets</h3>
+          <p>A family-run sweet shop since 1937, offering authentic Indian sweets, namkeen, and bakery items.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="team.html">Team</a></li>
+            <li><a href="products.html">Products</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Mithaas Sweets</h1>
-                <p class="tagline">"Swaad Apne Ghar Ka"</p>
-            </div>
-        </section>
-        <!-- About Section -->
-        <section class="about">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="images/shop-front.jpg" alt="Mithaas Sweets Shop Front">
-                    </div>
-                    <div class="about-text">
-                        <h2>Our Sweet Legacy</h2>
-                        <p>Welcome to Mithaas Sweets, a family-run sweet shop with a rich heritage dating back to 1937. Currently headed by Mr. Sanjay Singhania, an MBA from FMS Delhi, we continue to serve authentic Indian sweets and snacks made with traditional recipes and the finest ingredients.</p>
-                        <p>Our commitment to quality and taste has made us a beloved destination for generations of sweet lovers in Delhi and beyond.</p>
-                        <div class="contact-info">
-                            <div class="info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>MAP 915, Sector 12, RK Puram, New Delhi</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-phone"></i>
-                                <span>7042023653</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-clock"></i>
-                                <span>Open daily: 8:00 AM - 9:00 PM</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Products -->
-        <section class="featured-products">
-            <div class="container">
-                <h2>Our Signature Sweets</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="images/kaju-katli.jpg" alt="Kaju Katli">
-                        </div>
-                        <div class="product-info">
-                           <div class="product-card">
-    <div class="product-img">
-        <img src="images/kaju-katli.jpg" alt="Kaju Katli">
-    </div>
-    <div class="product-info">
-        <h3>Kaju Katli</h3>
-        <p>Delicate diamond-shaped cashew fudge with silver varq topping</p>
-        <div class="product-footer">
-            <span class="price">₹800/kg</span>
-            <button class="btn-small" onclick="addToCart(1, 'Kaju Katli', 800, 'images/kaju-katli.jpg')">Add to Cart</button>
+          </ul>
         </div>
+      </div>
     </div>
-</div>
-
-<div class="product-card">
-    <div class="product-img">
-        <img src="images/gulab-jamun.jpg" alt="Gulab Jamun">
-    </div>
-    <div class="product-info">
-        <h3>Gulab Jamun</h3>
-        <p>Soft milk solids dumplings soaked in rose-flavored sugar syrup</p>
-        <div class="product-footer">
-            <span class="price">₹400/kg</span>
-            <button class="btn-small" onclick="addToCart(2, 'Gulab Jamun', 400, 'images/gulab-jamun.jpg')">Add to Cart</button>
-        </div>
-    </div>
-</div>
-
-<!-- New Sweet 1: Rasgulla -->
-<div class="product-card">
-    <div class="product-img">
-        <img src="images/rasgulla.jpg" alt="Rasgulla">
-    </div>
-    <div class="product-info">
-        <h3>Rasgulla</h3>
-        <p>Spongy white balls made of chenna soaked in light sugar syrup</p>
-        <div class="product-footer">
-            <span class="price">₹350/kg</span>
-            <button class="btn-small" onclick="addToCart(3, 'Rasgulla', 350, 'images/rasgulla.jpg')">Add to Cart</button>
-        </div>
-    </div>
-</div>
-
-<!-- New Sweet 2: Soan Papdi -->
-<div class="product-card">
-    <div class="product-img">
-        <img src="images/soan-papdi.jpg" alt="Soan Papdi">
-    </div>
-    <div class="product-info">
-        <h3>Soan Papdi</h3>
-        <p>Flaky and crispy sweet made with gram flour, ghee, and cardamom</p>
-        <div class="product-footer">
-            <span class="price">₹300/kg</span>
-            <button class="btn-small" onclick="addToCart(4, 'Soan Papdi', 300, 'images/soan-papdi.jpg')">Add to Cart</button>
-        </div>
-    </div>
-</div>
-
-<!-- New Sweet 3: Motichoor Ladoo -->
-<div class="product-card">
-    <div class="product-img">
-        <img src="images/motichoor-ladoo.jpg" alt="Motichoor Ladoo">
-    </div>
-    <div class="product-info">
-        <h3>Motichoor Ladoo</h3>
-        <p>Golden-orange sweet balls made with fine boondi and ghee</p>
-        <div class="product-footer">
-            <span class="price">₹500/kg</span>
-            <button class="btn-small" onclick="addToCart(5, 'Motichoor Ladoo', 500, 'images/motichoor-ladoo.jpg')">Add to Cart</button>
-        </div>
-    </div>
-</div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="images/soan-papdi.jpg" alt="Soan Papdi">
-                        </div>
-                        <div class="product-info">
-                            <h3>Soan Papdi</h3>
-                            <p>Flaky, crisp sweet made with gram flour, sugar and cardamom</p>
-                            <div class="product-footer">
-                                <span class="price">₹350/kg</span>
-                                <button class="btn-small" onclick="addToCart(3, 'Soan Papdi', 350, 'images/soan-papdi.jpg')">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="view-all">
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="testimonials">
-            <div class="container">
-                <h2>What Our Customers Say</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-img">
-                                <img src="images/testimonial1.jpg" alt="Priya Sharma">
-                            </div>
-                            <div class="testimonial-author">
-                                <h3>Priya Sharma</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="testimonial-text">The sweets from Mithaas are absolutely divine! Their Kaju Katli is the best I've ever had.</p>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-img">
-                                <img src="images/testimonial2.jpg" alt="Rajesh Kumar">
-                            </div>
-                            <div class="testimonial-author">
-                                <h3>Rajesh Kumar</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="testimonial-text">Been a customer for over 20 years. The quality and taste have remained consistent throughout.</p>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-img">
-                                <img src="images/testimonial3.jpg" alt="Anita Patel">
-                            </div>
-                            <div class="testimonial-author">
-                                <h3>Anita Patel</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="testimonial-text">Their Gulab Jamun is to die for! Perfect sweetness and so soft. A must-try!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Festival Special Banner -->
-        <section class="festival-banner">
-            <div class="container">
-                <div class="banner-content">
-                    <p>Celebrate this festive season with our special gift boxes and sweet assortments.</p>
-                    <a href="products.html" 
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Mithaas Sweets</h3>
-                    <p>A family-run sweet shop since 1937, offering authentic Indian sweets, namkeen, and bakery items.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Categories</h3>
-                    <ul>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <address>
-                        <p> Sector 12, RK Puram,</p>
-                        <p>New Delhi</p>
-                        <p>Phone: 7042023653</p>
-                        <p>Email: info@mithaassweets.com</p>
-                    </address>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Mithaas Sweets. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  </footer>
 </body>
 </html>
+
