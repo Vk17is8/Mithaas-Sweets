@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart - Mithaas Sweets</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Cart</h1>
+    <a href="index.html">← Back to Shop</a>
+  </header>
+  <main class="cart-container">
+    <div id="cart-items"></div>
+    <h2 id="total-price">Total: ₹0</h2>
+  </main>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function displayCart() {
+      const container = document.getElementById("cart-items");
+      container.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        document.getElementById("total-price").textContent = "";
+        return;
+      }
+
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+        container.innerHTML += `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" style="height:100px" />
+            <div>
+              <h3>${item.name}</h3>
+              <p>Price: ₹${item.price}</p>
+              <p>Quantity: ${item.quantity}</p>
+              <button onclick="removeItem(${item.id})">Remove</button>
+            </div>
+          </div>
+          <hr/>
+        `;
+      });
+
+      document.getElementById("total-price").textContent = "Total: ₹" + total;
+    }
+
+    function removeItem(id) {
+      cart = cart.filter(item => item.id !== id);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      displayCart();
+    }
+
+    document.addEventListener("DOMContentLoaded", displayCart);
+  </script>
+</body>
+</html>
