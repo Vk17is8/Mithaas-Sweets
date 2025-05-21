@@ -3,58 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <title>Your Cart - Mithaas Sweets</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .cart-container { max-width: 800px; margin: auto; padding: 20px; }
+    .cart-item { display: flex; justify-content: space-between; margin-bottom: 15px; }
+    .cart-item img { width: 100px; height: 100px; object-fit: cover; }
+    .cart-item-info { flex: 1; margin-left: 20px; }
+  </style>
 </head>
 <body>
-  <header>
+  <div class="cart-container">
     <h1>Your Cart</h1>
-    <a href="index.html">← Back to Shop</a>
-  </header>
-  <main class="cart-container">
-    <div id="cart-items"></div>
-    <h2 id="total-price">Total: ₹0</h2>
-  </main>
+    <div id="cartItems"></div>
+    <h2 id="totalPrice"></h2>
+  </div>
 
   <script>
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cartItems');
+    let total = 0;
 
-    function displayCart() {
-      const container = document.getElementById("cart-items");
-      container.innerHTML = "";
-      let total = 0;
-
-      if (cart.length === 0) {
-        container.innerHTML = "<p>Your cart is empty.</p>";
-        document.getElementById("total-price").textContent = "";
-        return;
-      }
-
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
       cart.forEach(item => {
         total += item.price * item.quantity;
-        container.innerHTML += `
+        cartItemsContainer.innerHTML += `
           <div class="cart-item">
-            <img src="${item.image}" alt="${item.name}" style="height:100px" />
-            <div>
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-item-info">
               <h3>${item.name}</h3>
-              <p>Price: ₹${item.price}</p>
-              <p>Quantity: ${item.quantity}</p>
-              <button onclick="removeItem(${item.id})">Remove</button>
+              <p>₹${item.price} x ${item.quantity}</p>
             </div>
           </div>
-          <hr/>
         `;
       });
-
-      document.getElementById("total-price").textContent = "Total: ₹" + total;
     }
 
-    function removeItem(id) {
-      cart = cart.filter(item => item.id !== id);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      displayCart();
-    }
-
-    document.addEventListener("DOMContentLoaded", displayCart);
+    document.getElementById('totalPrice').textContent = `Total: ₹${total}`;
   </script>
 </body>
 </html>
