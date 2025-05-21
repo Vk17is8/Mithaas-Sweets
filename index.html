@@ -105,7 +105,7 @@
               <p>Delicate diamond-shaped cashew fudge with silver varq topping</p>
               <div class="product-footer">
                 <span class="price">₹800/kg</span>
-                <button class="btn-small" onclick="addToCart(1, 'Kaju Katli', 800, 'images/kaju-katli.jpg')">Add to Cart</button>
+                <button class="btn-small" onclick="addToCart(1, 'Kaju Katli', 800, 'kajit katli.jpeg')">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@
               <p>Soft milk solids dumplings soaked in rose-flavored sugar syrup</p>
               <div class="product-footer">
                 <span class="price">₹400/kg</span>
-                <button class="btn-small" onclick="addToCart(2, 'Gulab Jamun', 400, 'images/gulab-jamun.jpg')">Add to Cart</button>
+                <button class="btn-small" onclick="addToCart(2, 'Gulab Jamun', 400, 'gj.jpg')">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@
               <p>Spongy white balls made of chenna soaked in light sugar syrup</p>
               <div class="product-footer">
                 <span class="price">₹350/kg</span>
-                <button class="btn-small" onclick="addToCart(3, 'Rasgulla', 350, 'images/rasgulla.jpg')">Add to Cart</button>
+                <button class="btn-small" onclick="addToCart(3, 'Rasgulla', 350, 'rg.jpg')">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@
               <p>Flaky and crispy sweet made with gram flour, ghee, and cardamom</p>
               <div class="product-footer">
                 <span class="price">₹300/kg</span>
-                <button class="btn-small" onclick="addToCart(4, 'Soan Papdi', 300, 'images/soan-papdi.jpg')">Add to Cart</button>
+                <button class="btn-small" onclick="addToCart(4, 'Soan Papdi', 300, 'soan papdi.jpeg')">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -161,7 +161,7 @@
               <p>Golden-orange sweet balls made with fine boondi and ghee</p>
               <div class="product-footer">
                 <span class="price">₹500/kg</span>
-                <button class="btn-small" onclick="addToCart(5, 'Motichoor Ladoo', 500, 'images/motichoor-ladoo.jpg')">Add to Cart</button>
+                <button class="btn-small" onclick="addToCart(5, 'Motichoor Ladoo', 500, 'motichoor.webp')">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -176,15 +176,12 @@
         <div class="testimonials-grid">
           <div class="testimonial-card">
             <div class="testimonial-header">
-              <div class="testimonial-img">
-              </div>
+              <div class="testimonial-img"></div>
               <div class="testimonial-author">
                 <h3>Priya Sharma</h3>
                 <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                 </div>
               </div>
@@ -194,15 +191,12 @@
 
           <div class="testimonial-card">
             <div class="testimonial-header">
-              <div class="testimonial-img">
-              </div>
+              <div class="testimonial-img"></div>
               <div class="testimonial-author">
                 <h3>Rajesh Kumar</h3>
                 <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                 </div>
               </div>
@@ -212,15 +206,12 @@
 
           <div class="testimonial-card">
             <div class="testimonial-header">
-              <div class="testimonial-img">
-              </div>
+              <div class="testimonial-img"></div>
               <div class="testimonial-author">
                 <h3>Anita Patel</h3>
                 <div class="stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                 </div>
               </div>
@@ -249,8 +240,7 @@
         <div class="footer-section">
           <h3>Mithaas Sweets</h3>
           <p>A family-run sweet shop since 1937, offering authentic Indian sweets, namkeen, and bakery items.</p>
-          <div class="social-icons">
-          </div>
+          <div class="social-icons"></div>
         </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
@@ -263,5 +253,33 @@
       </div>
     </div>
   </footer>
+
+  <!-- Cart Script -->
+  <script>
+    if (!localStorage.getItem('cart')) {
+      localStorage.setItem('cart', JSON.stringify([]));
+    }
+
+    function addToCart(id, name, price, image) {
+      const cart = JSON.parse(localStorage.getItem('cart'));
+      const existingItem = cart.find(item => item.id === id);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ id, name, price, image, quantity: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+      alert(`${name} has been added to your cart!`);
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart'));
+      document.querySelector('.cart-count').textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+    }
+
+    updateCartCount();
+  </script>
 </body>
 </html>
+
